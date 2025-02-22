@@ -4,7 +4,8 @@
 * Gelen mesaj eğer normal yazışma mesajı işe duygu tespiti yapılır, eğer bir haber metni ise haber özetlenir ve haber hakkında kısa yorum yapılır.
 * Vs1 ve Vs2 ön çalışmaları içerir.
 * ✅ En güncel versiyon için Vs3 Klasörüne Bakınız.
-
+    ## Önemli Not 🗒️:
+    * Her Kullanıcı .env dosyasını mesaj çekeceği hesaba ve kendi Gemini API Key'ine göre oluşturmalıdır !
 ---
 
 ## **Özellikler ✨**  
@@ -68,6 +69,9 @@ pip install -U google-generativeai (güncel versiyonu kontrol edin)
 | `id`          | INT         | Birincil anahtar                    |
 | `msg_id`      | INT         | `messages.id` ile ilişkili           |
 | `msg_sum`     | TEXT        | Mesajın özeti                       |  
+
+### Şablon:
+* ![NewDatabaseStructure](https://github.com/user-attachments/assets/f827489c-fb63-4897-9b5d-ff067331a264)
 
 ---
 
