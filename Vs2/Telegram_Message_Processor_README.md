@@ -5,7 +5,7 @@
 * Vs1 ve Vs2 ön çalışmaları içerir.
 * ✅ En güncel versiyon için Vs3 Klasörüne Bakınız.
     ## Önemli Not 🗒️:
-    * Her Kullanıcı .env dosyasını mesaj çekeceği hesaba ve kendi Gemini API Key'ine göre oluşturmalıdır !
+    * Her Kullanıcı `.env` dosyasını mesaj çekeceği hesaba ve kendi Gemini API Key'ine göre oluşturmalıdır !
 ---
 
 ## **Özellikler ✨**  
