@@ -1,48 +1,53 @@
 
-# **Telegram Message Processor**  
-Bu proje, Telegram mesajlarını çekip, veritabanına kaydeden ve mesajları özetleyerek **summary** tablosuna ekleyen bir sistemdir.  
+# **Telegram Message Processor ⚙️**  
+* Bu projede hedef kullanıcının mesaj verileri, Python kullanılarak Telegram API'sinden alınmaktadır. Daha sonra projeye Entegre edilen Gemini API sayesinde mesajlar işlenir ve hem orijinal mesaj hemde işlenmiş mesajlar MySql database aktarılır.
+* Gelen mesaj eğer normal yazışma mesajı işe duygu tespiti yapılır, eğer bir haber metni ise haber özetlenir ve haber hakkında kısa yorum yapılır
 
 ---
 
-## **Özellikler**  
-- Telegram'dan metin mesajlarını, fotoğrafları ve videoları çekme  
+## **Özellikler ✨**  
+- Telegram'dan metin mesajı, fotoğraf ve video çekme  
 - Kullanıcı bilgilerini `users` tablosunda güncelleme veya ekleme  
-- Mesajları `messages` tablosuna kaydetme  
-- Mesajların özetlerini **summary** tablosuna kaydetme  
+- Orijinal Mesajları `messages` tablosuna kaydetme  
+- İşlenmiş Mesajları (Gemini tarafından yapılan özetler ve yorumlar) `summary` tablosuna kaydetme  
 
 ---
 
-## **Yapılandırma**  
-Öncelikle `.env` dosyasını aşağıdaki gibi yapılandır:  
+## **Yapılandırma 📐**  
+Öncelikle `.env` dosyasını aşağıdaki gibi yapılandırın:  
 ```env
 API_ID=YOUR_TELEGRAM_API_ID
 API_HASH=YOUR_TELEGRAM_API_HASH
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
 ---
 
-## **Gereksinimler**  
+## **Gereksinimler 💥**  
 - Python 3.x  
 - `telethon`  
 - `mysql-connector-python`  
 - `.env` dosyası için `python-dotenv`  
 
-Gerekli paketleri yüklemek için:  
-```bash
-pip install telethon mysql-connector-python python-dotenv
+Gerekli paketleri yüklemek için 📥 :  
+```terminal
+pip install telethon
+pip install mysql-connector-python
+pip install python-dotenv
+pip install -U google-generativeai (güncel versiyonu kontrol edin)
 ```
 
 ---
 
-## **Veritabanı Yapısı**  
-### `users` Tablosu:  
+## **Veritabanı Yapısı 🗃️**  
+###1️⃣ `users` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar                    |
 | `user_name`   | VARCHAR(50) | Kullanıcı adı                       |
 | `last_updated`| TIMESTAMP   | Son güncellenme zamanı               |  
 
-### `messages` Tablosu:  
+###2️⃣ `messages` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar (AUTO_INCREMENT)   |
@@ -55,7 +60,7 @@ pip install telethon mysql-connector-python python-dotenv
 | `insert_time` | TIMESTAMP   | Mesajın veritabanına eklendiği zaman|
 | `status`      | TINYINT     | Özetleme durumu                     |  
 
-### `summary` Tablosu:  
+###3️⃣ `summary` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar                    |
@@ -64,34 +69,34 @@ pip install telethon mysql-connector-python python-dotenv
 
 ---
 
-## **Kullanım**  
-```bash
+## **Kullanım 🌟**  
+```terminal
 python project.py
 ```
 
 ---
 
-## **Proje Yapısı**  
+## **Proje Yapısı 🏛️**  
 ```plaintext
-Telegram_Update/
+./
 │
-├── project.py             # Telegram mesajlarını çekip veritabanına kaydeder
-├── gemini_ai.py           # Mesajları işleyip özetler
-├── database_connection.py # Veritabanı bağlantı ayarları
+├── project.py             # Telegram mesajları çekilir, gemini fonksiyonu çağrılır, tüm veriler veritabanına kaydedilir
+├── gemini_ai.py           # Mesajları işlenip özetlernir 
+├── database_connection.py # Veritabanı bağlantı ayarlarları
 ├── .env                   # API anahtarları ve veritabanı bilgileri
 └── downloads/             # İndirilen fotoğraf ve videoların kaydedildiği klasör
 ```
 
 ---
 
-## **Çalışma Mantığı**  
+## **Çalışma Mantığı ℹ️**  
 1. `project.py`, Telegram'dan mesajları çekip `users` ve `messages` tablolarına kaydeder.  
-2. Mesajlar işlendiğinde `summary` tablosuna özetleri kaydeder.  
-3. Özetleme işlemi için `gemini_ai.py` kullanılır.  
+2. `gemini_ai.py` dosyasındaki `get_summary()` fonksiyonu sayesinde Mesajlar işlenir 
+3.  İşlenen mesajlar `summary` tablosuna kaydedilir. 
 
 ---
 
-## **Katkıda Bulunma**  
+## **Katkıda Bulunma ➕**  
 Katkıda bulunmak isterseniz:  
 1. Fork'layın  
 2. Yeni bir dal oluşturun (`git checkout -b feature/new-feature`)  
@@ -101,5 +106,7 @@ Katkıda bulunmak isterseniz:
 
 ---
 
-## **Lisans**  
-Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyin.  
+## **Teşekkürler 🌷**  
+Sofware Developer `SULEYMAN ASIM GELISGEN`
+
+  
