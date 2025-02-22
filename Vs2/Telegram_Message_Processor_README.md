@@ -70,8 +70,8 @@ pip install -U google-generativeai (güncel versiyonu kontrol edin)
 | `msg_id`      | INT         | `messages.id` ile ilişkili           |
 | `msg_sum`     | TEXT        | Mesajın özeti                       |  
 
-### Şablon:
-* ![NewDatabaseStructure](https://github.com/user-attachments/assets/f827489c-fb63-4897-9b5d-ff067331a264)
+### ⏺️ Şablon:
+![NewDatabaseStructure](https://github.com/user-attachments/assets/f827489c-fb63-4897-9b5d-ff067331a264)
 
 ---
 
