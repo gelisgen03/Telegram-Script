@@ -2,6 +2,8 @@
 # **Telegram Message Processor ⚙️**  
 * Bu projede hedef kullanıcının mesaj verileri, Python kullanılarak Telegram API'sinden alınmaktadır. Daha sonra projeye Entegre edilen Gemini API sayesinde mesajlar işlenir ve hem orijinal mesaj hemde işlenmiş mesajlar MySql database aktarılır.
 * Gelen mesaj eğer normal yazışma mesajı işe duygu tespiti yapılır, eğer bir haber metni ise haber özetlenir ve haber hakkında kısa yorum yapılır
+* Vs1 ve Vs2 ön çalışmaları içerir
+✅ En güncel versiyon için Vs3 Klasörüne Bakınız
 
 ---
 
@@ -40,14 +42,14 @@ pip install -U google-generativeai (güncel versiyonu kontrol edin)
 ---
 
 ## **Veritabanı Yapısı 🗃️**  
-###1️⃣ `users` Tablosu:  
+### 1️⃣ `users` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar                    |
 | `user_name`   | VARCHAR(50) | Kullanıcı adı                       |
 | `last_updated`| TIMESTAMP   | Son güncellenme zamanı               |  
 
-###2️⃣ `messages` Tablosu:  
+### 2️⃣ `messages` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar (AUTO_INCREMENT)   |
@@ -60,7 +62,7 @@ pip install -U google-generativeai (güncel versiyonu kontrol edin)
 | `insert_time` | TIMESTAMP   | Mesajın veritabanına eklendiği zaman|
 | `status`      | TINYINT     | Özetleme durumu                     |  
 
-###3️⃣ `summary` Tablosu:  
+### 3️⃣ `summary` Tablosu:  
 | Column        | Type        | Description                        |
 |---------------|-------------|------------------------------------|
 | `id`          | INT         | Birincil anahtar                    |
