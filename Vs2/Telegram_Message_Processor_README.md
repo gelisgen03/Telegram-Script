@@ -1,9 +1,9 @@
 
 # **Telegram Message Processor ⚙️**  
 * Bu projede hedef kullanıcının mesaj verileri, Python kullanılarak Telegram API'sinden alınmaktadır. Daha sonra projeye Entegre edilen Gemini API sayesinde mesajlar işlenir ve hem orijinal mesaj hemde işlenmiş mesajlar MySql database aktarılır.
-* Gelen mesaj eğer normal yazışma mesajı işe duygu tespiti yapılır, eğer bir haber metni ise haber özetlenir ve haber hakkında kısa yorum yapılır
-* Vs1 ve Vs2 ön çalışmaları içerir
-- ✅ En güncel versiyon için Vs3 Klasörüne Bakınız
+* Gelen mesaj eğer normal yazışma mesajı işe duygu tespiti yapılır, eğer bir haber metni ise haber özetlenir ve haber hakkında kısa yorum yapılır.
+* Vs1 ve Vs2 ön çalışmaları içerir.
+* ✅ En güncel versiyon için Vs3 Klasörüne Bakınız.
 
 ---
 
